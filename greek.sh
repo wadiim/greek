@@ -1,14 +1,20 @@
 #!/bin/bash
 
 cat <<- EOF
-┏━━━━━━━━┯━━━━━━━━━┳━━━━━━━━┯━━━━━━━━┳━━━━━━━━┯━━━━━━━━━┳━━━━━━━━┯━━━━━━━━━┓
-┃ Letter │ Name    ┃ Letter │ Name   ┃ Letter │ Name    ┃ Letter │ Name    ┃
-┣━━━━━━━━┿━━━━━━━━━╋━━━━━━━━┿━━━━━━━━╋━━━━━━━━┿━━━━━━━━━╋━━━━━━━━┿━━━━━━━━━┫
-┃  Α α   │ alpha   ┃  Η η   │ eta    ┃  Ν ν   │ nu      ┃  Τ τ   │ tau     ┃
-┃  Β β   │ beta    ┃  Θ θ   │ theta  ┃  Ξ ξ   │ xi      ┃  Υ υ   │ upsilon ┃
-┃  Γ γ   │ gamma   ┃  Ι ι   │ iota   ┃  Ο ο   │ omicron ┃  Φ φ   │ phi     ┃
-┃  Δ δ   │ delta   ┃  Κ κ   │ kappa  ┃  Π π   │ pi      ┃  Χ χ   │ chi     ┃
-┃  Ε ε   │ epsilon ┃  Λ λ   │ lambda ┃  Ρ ρ   │ rho     ┃  Ψ ψ   │ psi     ┃
-┃  Ζ ζ   │ zeta    ┃  Μ μ   │ mu     ┃  Σ σ   │ sigma   ┃  Ω ω   │ omega   ┃
-┗━━━━━━━━┷━━━━━━━━━┻━━━━━━━━┷━━━━━━━━┻━━━━━━━━┷━━━━━━━━━┻━━━━━━━━┷━━━━━━━━━┛
+┏━━━━━━━━┯━━━━━━━━━┳━━━━━━━━┯━━━━━━━━━┓
+┃ Letter │ Name    ┃ Letter │ Name    ┃
+┣━━━━━━━━┿━━━━━━━━━╋━━━━━━━━┿━━━━━━━━━┫
+┃  Α α   │ alpha   ┃  Ν ν   │ nu      ┃
+┃  Β β   │ beta    ┃  Ξ ξ   │ xi      ┃
+┃  Γ γ   │ gamma   ┃  Ο ο   │ omicron ┃
+┃  Δ δ   │ delta   ┃  Π π   │ pi      ┃
+┃  Ε ε   │ epsilon ┃  Ρ ρ   │ rho     ┃
+┃  Ζ ζ   │ zeta    ┃  Σ σ   │ sigma   ┃
+┃  Η η   │ eta     ┃  Τ τ   │ tau     ┃
+┃  Θ θ   │ theta   ┃  Υ υ   │ upsilon ┃
+┃  Ι ι   │ iota    ┃  Φ φ   │ phi     ┃
+┃  Κ κ   │ kappa   ┃  Χ χ   │ chi     ┃
+┃  Λ λ   │ lambda  ┃  Ψ ψ   │ psi     ┃
+┃  Μ μ   │ mu      ┃  Ω ω   │ omega   ┃
+┗━━━━━━━━┷━━━━━━━━━┻━━━━━━━━┷━━━━━━━━━┛
 EOF
