@@ -93,7 +93,8 @@ generate_double_column_table () {
 generate_quadruple_column_table () {
 	local names=("$@")
 
-	local num_of_rows=$(( "${#names[@]}" / 2 )) # Not counting the header.
+	local num_of_names="${#names[@]}"
+	local num_of_rows=$(( (num_of_names + 1) / 2 )) # Not counting the header.
 	local longest_in_col2=$( longest_string "${names[@]:0:$num_of_rows}" )
 	if (( "$longest_in_col2" < 4 )); then longest_in_col2=4; fi
 	local longest_in_col4=$(
@@ -115,10 +116,17 @@ generate_quadruple_column_table () {
 	for (( i=0; i<"$num_of_rows"; i+=1 )); do
 		table+="┃  ${NAME_TO_LETTER[${names[$i]}]}   │ "
 		table+="$( string_pad_right ${names[$i]} $longest_in_col2 ' ' ) "
-		table+="┃  ${NAME_TO_LETTER[${names[$(( $num_of_rows + $i ))]}]}   │ "
-		table+="$( string_pad_right ${names[$(( $num_of_rows + $i ))]} $longest_in_col4 ' ' ) ┃\n"
+		if (( i == "$num_of_rows" - 1 )) && (( ("$num_of_names" % 2) != 0 )); then
+			table+="┣━━━━━━━━┷${col4_line}┛\n"
+			table+="┗━━━━━━━━┷${col2_line}┛"
+		else
+			table+="┃  ${NAME_TO_LETTER[${names[$(( $num_of_rows + $i ))]}]}   │ "
+			table+="$( string_pad_right ${names[$(( $num_of_rows + $i ))]} $longest_in_col4 ' ' ) ┃\n"
+		fi
 	done
-	table+="┗━━━━━━━━┷${col2_line}┻━━━━━━━━┷${col4_line}┛"
+	if (( ("$num_of_names" % 2) == 0 )); then
+		table+="┗━━━━━━━━┷${col2_line}┻━━━━━━━━┷${col4_line}┛"
+	fi
 
 	echo -e "$table"
 }
