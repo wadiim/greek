@@ -1,8 +1,10 @@
 # Greek
 
-A greek alphabet cheat sheet printer
+A greek alphabet cheat sheet printer.
 
-![](https://user-images.githubusercontent.com/33803413/80824282-68794500-8bde-11ea-90e6-1a97e45d718b.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/33803413/125096316-5134c200-e0d5-11eb-96b0-acaaec0ca110.png" />
+</p>
 
 ## Usage
 ```sh
