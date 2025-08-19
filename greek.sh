@@ -1,30 +1,30 @@
 #!/bin/bash
 
 declare -Ar NAME_TO_LETTER=(
-	[alpha]='Α α'
-	[beta]='Β β'
-	[gamma]='Γ γ'
-	[delta]='Δ δ'
-	[epsilon]='Ε ε'
-	[zeta]='Ζ ζ'
-	[eta]='Η η'
-	[theta]='Θ θ'
-	[iota]='Ι ι'
-	[kappa]='Κ κ'
-	[lambda]='Λ λ'
-	[mu]='Μ μ'
-	[nu]='Ν ν'
-	[xi]='Ξ ξ'
-	[omicron]='Ο ο'
-	[pi]='Π π'
-	[rho]='Ρ ρ'
-	[sigma]='Σ σ'
-	[tau]='Τ τ'
-	[upsilon]='Υ υ'
-	[phi]='Φ φ'
-	[chi]='Χ χ'
-	[psi]='Ψ ψ'
-	[omega]='Ω ω'
+	[alpha]='Α α  '
+	[beta]='Β β  '
+	[gamma]='Γ γ  '
+	[delta]='Δ δ  '
+	[epsilon]='Ε ϵ ε'
+	[zeta]='Ζ ζ  '
+	[eta]='Η η  '
+	[theta]='Θ θ ϑ'
+	[iota]='Ι ι  '
+	[kappa]='Κ κ ϰ'
+	[lambda]='Λ λ  '
+	[mu]='Μ μ  '
+	[nu]='Ν ν  '
+	[xi]='Ξ ξ  '
+	[omicron]='Ο ο  '
+	[pi]='Π π ϖ'
+	[rho]='Ρ ρ ϱ'
+	[sigma]='Σ σ ς'
+	[tau]='Τ τ  '
+	[upsilon]='Υ υ  '
+	[phi]='Φ ϕ φ'
+	[chi]='Χ χ  '
+	[psi]='Ψ ψ  '
+	[omega]='Ω ω  '
 )
 
 main () {
@@ -82,7 +82,7 @@ generate_double_column_table () {
 
 	# Generate body
 	for i in "${names[@]}"; do
-		table+="┃  ${NAME_TO_LETTER[$i]}   │ "
+		table+="┃ ${NAME_TO_LETTER[$i]}  │ "
 		table+="$( string_pad_right $i $longest ' ' ) ┃\n"
 	done
 	table+="┗━━━━━━━━┷${col2_line}┛"
@@ -114,13 +114,13 @@ generate_quadruple_column_table () {
 
 	# Generate body
 	for (( i=0; i<"$num_of_rows"; i+=1 )); do
-		table+="┃  ${NAME_TO_LETTER[${names[$i]}]}   │ "
+		table+="┃ ${NAME_TO_LETTER[${names[$i]}]}  │ "
 		table+="$( string_pad_right ${names[$i]} $longest_in_col2 ' ' ) "
 		if (( i == "$num_of_rows" - 1 )) && (( ("$num_of_names" % 2) != 0 )); then
 			table+="┣━━━━━━━━┷${col4_line}┛\n"
 			table+="┗━━━━━━━━┷${col2_line}┛"
 		else
-			table+="┃  ${NAME_TO_LETTER[${names[$(( $num_of_rows + $i ))]}]}   │ "
+			table+="┃ ${NAME_TO_LETTER[${names[$(( $num_of_rows + $i ))]}]}  │ "
 			table+="$( string_pad_right ${names[$(( $num_of_rows + $i ))]} $longest_in_col4 ' ' ) ┃\n"
 		fi
 	done
